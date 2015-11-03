@@ -1,6 +1,6 @@
 # citi-tests
 Automation tests for CITI PRW project.
-This is first smoke test automated.
+This is first smoke tests automated.
 Current framework supports:
 - two browsers (Firefox, Chrome);
 - two environments (qa, dev);

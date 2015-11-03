@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke">
+        <test name="AllSmokeTests">
+            <classes>
+                <class name="com.cartera.suites.ui.smoke.HomePageSmokeITCase"/>
+                <class name="com.cartera.suites.ui.smoke.HIWPageSmokeITCase"/>
+                <class name="com.cartera.suites.ui.smoke.MyPRWPageSmokeITCase"/>
+                <class name="com.cartera.suites.ui.smoke.RequestRefundPageSmokeITCase"/>
+                <class name="com.cartera.suites.ui.smoke.SearchResultsPageSmokeITCase"/>
+                <class name="com.cartera.suites.ui.smoke.ViewPriceRewindSmokeITCase"/>
+            </classes>
+        </test>
+</suite>

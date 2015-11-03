@@ -1,0 +1,7 @@
+<suite name="HomePageSmoke" verbose="2">
+  <test name="HomePageSmokeITCase">
+    <classes>
+       <class name="com.cartera.suites.ui.smoke.HomePageSmokeITCase"/>
+    </classes>
+  </test>
+</suite>

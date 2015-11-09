@@ -1,0 +1,7 @@
+<suite name="ViewPriceRewindSmoke" verbose="1">
+   <test name="ViewPriceRewindSmokeITCase">
+        <classes>
+            <class name="com.cartera.suites.ui.smoke.ViewPriceRewindSmokeITCase"/>
+        </classes>
+    </test>
+</suite>

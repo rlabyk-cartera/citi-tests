@@ -5,10 +5,8 @@ import com.cartera.citi.framework.logger.Logger;
 import com.cartera.citi.framework.testdata.TestData;
 import com.cartera.citi.pages.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -96,7 +94,6 @@ public class MyPRWBO {
         Assert.assertTrue(myPRWPage.getCurPage().equals(lastPageNum), "Last page number error, should be: " + lastPageNum + " Got: " + myPRWPage.getCurPage());
     }
 
-    //Check search
     public void checkSearch() {
         Logger.logStep("Checking search via search box.");
         Logger.logStep("Not implemented yet.");
@@ -109,7 +106,6 @@ public class MyPRWBO {
             if (!(checkTrackStatus(itemStatus))){
                 break;
             }
-            //result = checkTrackStatus(itemStatus);
             result = true;
         }
         Assert.assertTrue(result, "Track Status Error!");

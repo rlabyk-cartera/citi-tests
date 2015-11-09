@@ -139,7 +139,6 @@ public class HowItWorksPage extends BasePage {
     public Boolean isPlayerAvailable() {
         Boolean result;
         movieWrapper.waitForElement();
-        //result = movieWrapper.getWebElement().getAttribute("style").contains("display: block;");
         result = movieWrapper.getWebElement().getCssValue("display").contains("block");
         closePlayer();
         return result;

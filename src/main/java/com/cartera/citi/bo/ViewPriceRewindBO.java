@@ -50,7 +50,6 @@ public class ViewPriceRewindBO {
         viewPrwPage = homePage.naigateToViewPrwPage(0);
     }
 
-    //implement all checkers:
     public void checkNavigationToViewPriceRewindPage() {
         Logger.logStep("Check navigation to 'View Price Rewind' page.");
         String curURL = Context.getCurrentWindowURL();
@@ -61,14 +60,12 @@ public class ViewPriceRewindBO {
     public void checkSections() {
         Logger.logStep("Check all Sections are available on the page.");
         Boolean isPresent = false;
-        //for (Section section : viewPrwPage.getSections()) {
         for (Map.Entry<String, Section> sectionEntry : viewPrwPage.getSectionsMap().entrySet()) {
             Logger.logStep("Start checking: " + sectionEntry.getKey());
-            //rebuild for try catch:
             if (sectionEntry.getValue().isDisplayed()) {
                 isPresent = true;
             } else {
-                Logger.logToOutput(sectionEntry.getKey() + " is absent!");
+                Logger.logStep(sectionEntry.getKey() + " is absent!");
                 break;
             }
         }

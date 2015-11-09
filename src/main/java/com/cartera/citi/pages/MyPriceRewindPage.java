@@ -3,9 +3,7 @@ package com.cartera.citi.pages;
 import com.cartera.citi.framework.decorator.CustomFieldDecorator;
 import com.cartera.citi.framework.elements.*;
 import com.cartera.citi.framework.logger.Logger;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 //import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -117,8 +115,14 @@ public class MyPriceRewindPage extends BasePage {
         clickFilterByButton();
         for (WebElement webElement : filterOptions) {
             if (webElement.getAttribute("innerHTML").contains(status)) {
-                webElement.click();
-                break;
+               try {
+                   webElement.click();
+                   break;
+               } catch (ElementNotVisibleException ex) {
+                   Logger.logStep("ElementNotVisibleException happened because of foresee pop-up, closing it!");
+                   driver.findElement(By.cssSelector("a.fsrCloseBtn")).click();
+                   continue;
+               }
             }
         }
     }
@@ -135,7 +139,6 @@ public class MyPriceRewindPage extends BasePage {
     }
 
     public void clickFilterByButton() {
-        filterBtn.waitForElement();
         filterBtn.click();
     }
 
@@ -173,7 +176,6 @@ public class MyPriceRewindPage extends BasePage {
         perPageFilterBtn.click();
     }
 
-    //Tracks:
     public List<String> getTrackNames() {
         List<String> trackNames = new LinkedList<String>();
         for (WebElement webElement : trackNamesLst) {
@@ -182,7 +184,6 @@ public class MyPriceRewindPage extends BasePage {
         return trackNames;
     }
 
-    //Tracks Statuses:get status for each track on the page:
     public List<String> getTrackStatuses() {
         List<String> trackStatusLst = new LinkedList<String>();
         for (WebElement webElement : trackStatuses) {
@@ -204,7 +205,6 @@ public class MyPriceRewindPage extends BasePage {
         }
     }
 
-    //Pagination:
     public void clickNextPage() {
         Logger.logStep("Clicking 'Next' page link.");
         nextPage.waitForElement();

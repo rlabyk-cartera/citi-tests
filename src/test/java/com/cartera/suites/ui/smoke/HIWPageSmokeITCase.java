@@ -27,7 +27,6 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //chekHowItWorksBtn
     @Test(timeOut = 300000)
     public void verifyHowItWorksBtn() {
         hiwBO.loginAndNavigateToHIWPage();
@@ -35,7 +34,6 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //checkNavigationToHIWPage
     @Test(timeOut = 300000)
     public void verifyNavigationToHIWPage() {
         hiwBO.loginAndNavigateToHIWPage();
@@ -43,7 +41,6 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //checkHeroImages:
     @Test(timeOut = 300000)
     public void verifyHeroImages() {
         hiwBO.loginAndNavigateToHIWPage();
@@ -51,7 +48,6 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //checkHIWSteps:
     @Test(timeOut = 300000)
     public void verifyHIWSteps() {
         hiwBO.loginAndNavigateToHIWPage();
@@ -59,7 +55,6 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //checkNavigationToSearchResultPage
     @Test(timeOut = 300000)
     public void verifyNavigationToSearchPage() {
         hiwBO.loginAndNavigateToHIWPage();
@@ -67,15 +62,12 @@ public class HIWPageSmokeITCase extends BaseTestClass {
         Logger.logStep("Verification passed.");
     }
 
-    //checkLogout
     @Test(timeOut = 300000)
     public void verifyLogout() {
         hiwBO.loginAndNavigateToHIWPage();
         hiwBO.checkLogout();
         Logger.logStep("Verification passed.");
     }
-
-
 
     @AfterClass
     public void tearDown() {

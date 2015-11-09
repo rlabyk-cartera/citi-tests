@@ -48,13 +48,9 @@ public class LoginPage extends BasePage {
     }
 
     public HomePage multiLogin() {
-       /* if (userIsLogged()) {
-            Logger.logStep("User is already logged.");
-            (new HomePage(driver)).logout();
-        }*/
         Logger.logHuman(Logger.Level.INFO, "Start filling fields", true);
         clickMultiLoginBtn();
-        //here we should select card
+        //here we should select card:not implemented yest;
         return new HomePage(driver);
     }
 

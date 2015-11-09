@@ -1,0 +1,7 @@
+<suite name="RequestRefundPageSmoke" verbose="1">
+  <test name="RequestRefundPageSmokeITCase">
+        <classes>
+            <class name="com.cartera.suites.ui.smoke.RequestRefundPageSmokeITCase"/>
+		</classes>
+    </test>
+</suite>

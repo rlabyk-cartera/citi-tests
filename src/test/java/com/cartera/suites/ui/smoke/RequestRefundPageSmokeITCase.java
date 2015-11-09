@@ -28,7 +28,7 @@ public class RequestRefundPageSmokeITCase extends BaseTestClass {
     }
 
     @Test(timeOut = 300000)
-    public void checkHeaderMessage() {
+    public void verifyHeaderMessage() {
         requestRefundBO.loginAndNavigateToRequestRefundPage();
         requestRefundBO.checkHeaderMsg();
         Logger.logStep("Verification passed.");

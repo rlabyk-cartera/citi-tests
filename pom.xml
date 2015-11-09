@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cartera.citi</groupId>
     <artifactId>CitiPRW</artifactId>
@@ -45,27 +45,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <systemPropertyVariables>
-                        <CONFIG>${CONFIG}</CONFIG>
-                        <PREFIX>${PREFIX}</PREFIX>
-                        <SUITE>${SUITE}</SUITE>
-                        <!--<BROWSER>${BROWSER}</BROWSER>-->
-                    </systemPropertyVariables>
-                    <environmentVariables>
-                        <CONFIG>${CONFIG}</CONFIG>
-                        <PREFIX>${PREFIX}</PREFIX>
-                        <SUITE>${SUITE}</SUITE>
-                        <!--<BROWSER>${BROWSER}</BROWSER>-->
-                    </environmentVariables>
-                    <!--<suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                        <!-<suiteXmlFile>hiw.xml</suiteXmlFile>
-                        <suiteXmlFile>home.xml</suiteXmlFile>
-                        <suiteXmlFile>my-prw.xml</suiteXmlFile>
-                        <suiteXmlFile>request-ref.xml</suiteXmlFile>
-                        <suiteXmlFile>search-res.xml</suiteXmlFile>
-                        <suiteXmlFile>view-price-rew.xml</suiteXmlFile>
-                    </suiteXmlFiles>-->
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
@@ -121,8 +100,13 @@
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <version>2.4.2</version>
-                        <configuration>
+                        <version>2.18.1</version>
+                       <configuration>
+                           <systemPropertyVariables>
+                               <webdriver.chrome.driver>
+                                <path>/chromedriver.exe</path>
+                               </webdriver.chrome.driver>
+                           </systemPropertyVariables>
                             <environmentVariables>
                                 <CONFIG>${CONFIG}</CONFIG>
                                 <PREFIX>${PREFIX}</PREFIX>
@@ -132,7 +116,7 @@
                           <suiteXmlFiles>
                              <suiteXmlFile>home.xml</suiteXmlFile>
                           </suiteXmlFiles>
-                         </configuration>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -145,15 +129,15 @@
             <build>
                 <plugins>
                     <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <version>2.4.2</version>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.18.1</version>
                         <configuration>
                             <environmentVariables>
                                 <CONFIG>${CONFIG}</CONFIG>
                                 <PREFIX>${PREFIX}</PREFIX>
                                 <SUITE>${SUITE}</SUITE>
-                                <!--<BROWSER>${BROWSER}</BROWSER>-->
+                                <BROWSER>${BROWSER}</BROWSER>
                             </environmentVariables>
                             <suiteXmlFiles>
                                 <suiteXmlFile>hiw.xml</suiteXmlFile>
@@ -173,13 +157,13 @@
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <version>2.4.2</version>
+                        <version>2.18.1</version>
                         <configuration>
                             <environmentVariables>
                                 <CONFIG>${CONFIG}</CONFIG>
                                 <PREFIX>${PREFIX}</PREFIX>
                                 <SUITE>${SUITE}</SUITE>
-                                <!--<BROWSER>${BROWSER}</BROWSER>-->
+                                <BROWSER>${BROWSER}</BROWSER>
                             </environmentVariables>
                             <suiteXmlFiles>
                                 <suiteXmlFile>my-prw.xml</suiteXmlFile>
@@ -199,16 +183,94 @@
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <version>2.4.2</version>
+                        <version>2.18.1</version>
                         <configuration>
                             <environmentVariables>
                                 <CONFIG>${CONFIG}</CONFIG>
                                 <PREFIX>${PREFIX}</PREFIX>
                                 <SUITE>${SUITE}</SUITE>
-                                <!--<BROWSER>${BROWSER}</BROWSER>-->
+                                <BROWSER>${BROWSER}</BROWSER>
                             </environmentVariables>
                             <suiteXmlFiles>
                                 <suiteXmlFile>testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>request-ref</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <version>2.18.1</version>
+                        <configuration>
+                            <environmentVariables>
+                                <CONFIG>${CONFIG}</CONFIG>
+                                <PREFIX>${PREFIX}</PREFIX>
+                                <SUITE>${SUITE}</SUITE>
+                                <BROWSER>${BROWSER}</BROWSER>
+                            </environmentVariables>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>request-ref.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>search-res</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <version>2.18.1</version>
+                        <configuration>
+                            <environmentVariables>
+                                <CONFIG>${CONFIG}</CONFIG>
+                                <PREFIX>${PREFIX}</PREFIX>
+                                <SUITE>${SUITE}</SUITE>
+                                <BROWSER>${BROWSER}</BROWSER>
+                            </environmentVariables>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>search-res.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>view-price-rew</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <version>2.18.1</version>
+                        <configuration>
+                            <environmentVariables>
+                                <CONFIG>${CONFIG}</CONFIG>
+                                <PREFIX>${PREFIX}</PREFIX>
+                                <SUITE>${SUITE}</SUITE>
+                                <BROWSER>${BROWSER}</BROWSER>
+                            </environmentVariables>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>view-price-rew.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
